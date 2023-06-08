@@ -4,7 +4,7 @@ import React from "react";
 
 const Item = ({ image, name, priceAfterDiscount, priceBeforeDiscount }) => {
   return (
-    <div className="w-[23%] relative">
+    <div className="w-64 relative">
       <Link href={""}>
         <div className="w-full h-64 mb-4">
           <Image src={image} width="100%" height="100%" objectFit="cover" />

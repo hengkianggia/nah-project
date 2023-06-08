@@ -4,7 +4,7 @@ import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <footer className="w-full px-20 py-14 bg-blackgrey flex justify-between text-white">
+    <footer className="w-full mt-10 px-20 py-14 bg-blackgrey flex justify-between text-white">
       {/* left */}
       <div className="w-[35%] space-y-3">
         <h1 className="font-semibold">ABOUT US</h1>
@@ -60,7 +60,7 @@ const Footer = () => {
           Sign up to our newsletter and get 10% off your next purchase, as well
           as early access to coming collections.
         </p>
-        <form action="submit">
+        <form action="submit" className="flex flex-col items-start gap-3">
           <input
             type="email"
             placeholder="Enter your email address..."

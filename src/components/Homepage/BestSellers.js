@@ -6,7 +6,7 @@ import gambar from "../../assets/product1.webp";
 import Link from "next/link";
 import { AiFillRightCircle, AiFillLeftCircle } from "react-icons/ai";
 
-const NewArrival = () => {
+const BestSellers = () => {
   const [slider, setSlider] = useState(false);
 
   const slideRight = () => {
@@ -19,7 +19,7 @@ const NewArrival = () => {
   };
   return (
     <div className="w-full flex flex-col items-center py-14 gap-10 my-10">
-      <h1 className="text-2xl">NEW ARRIVALS</h1>
+      <h1 className="text-2xl">BEST SELLERS</h1>
       {/* slider */}
       <div className="w-full flex justify-center items-center gap-5 mb-10">
         <span className="text-3xl cursor-pointer" onClick={slideRight}>
@@ -67,4 +67,4 @@ const NewArrival = () => {
   );
 };
 
-export default NewArrival;
+export default BestSellers;
