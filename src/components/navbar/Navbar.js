@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full px-16 grid place-items-center transition-all duration-200 h-24 fixed inset-0 ${
+      className={`w-full z-50 px-16 grid place-items-center transition-all duration-200 h-24 fixed inset-0 ${
         isScrolling ? "bg-blackgrey" : "bg-transparent"
       }  gap-3`}
     >
