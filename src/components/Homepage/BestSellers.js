@@ -5,6 +5,7 @@ import Item from "../UI/Item";
 import gambar from "../../assets/product1.webp";
 import Link from "next/link";
 import { AiFillRightCircle, AiFillLeftCircle } from "react-icons/ai";
+import Button from "../UI/Button";
 
 const BestSellers = () => {
   const [slider, setSlider] = useState(false);
@@ -60,9 +61,10 @@ const BestSellers = () => {
           <AiFillRightCircle />
         </span>
       </div>
-      <button className="px-6 py-2 bg-blackgrey text-white">
-        <Link href={""}>View All Product</Link>
-      </button>
+      <Button
+        className={" bg-blackgrey text-white"}
+        text={"View All Product"}
+      />
     </div>
   );
 };

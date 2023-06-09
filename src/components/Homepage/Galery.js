@@ -1,24 +1,52 @@
 import Image from "next/image";
 import React from "react";
 import gambar from "../../assets/pulsecheck.webp";
+import gambar1 from "../../assets/product1.webp";
+import Button from "../UI/Button";
+import { BsInstagram } from "react-icons/bs";
 import Link from "next/link";
 
 const Galery = () => {
   return (
-    <div className="w-full space-y-3 my-10">
+    <div className="w-full space-y-8 my-10">
       <span className="relative grid place-items-center">
-        <Image
-          src={gambar}
-          width="100%"
-          height="100%"
-          objectFit="cover"
+        <Image src={gambar} width="100%" height="100%" objectFit="cover" />
+        <Button
+          className={"bg-white text-blackgrey absolute"}
+          text={"View All Product"}
         />
-        <button className="absolute  px-6 py-2 text-blackgrey bg-white">
-          <Link href={""}>View All Product</Link>
-        </button>
+      </span>
+
+      <span className="relative w-full flex justify-center flex-wrap">
+        <IgPost image={gambar1} />
+        <IgPost image={gambar1} />
+        <IgPost image={gambar1} />
+        <IgPost image={gambar1} />
+        <IgPost image={gambar1} />
+        <IgPost image={gambar1} />
+        <IgPost image={gambar1} />
+        <IgPost image={gambar1} />
+        <IgPost image={gambar1} />
+        <IgPost image={gambar1} />
+        <IgPost image={gambar1} />
       </span>
     </div>
   );
 };
 
 export default Galery;
+
+const IgPost = ({ image, link }) => {
+  return (
+    <div className="w-[25%] relative">
+      <Link href={link ? link : ''}>
+        <Image src={image} width="100%" height={"100%"} objectFit="cover" />
+        <span className="w-full h-full absolute inset-0 opacity-0 hover:opacity-[.4] transition-all z-50 bg-gradient-radial from-transparent to-gray-600 grid place-items-center">
+          <div className="text-2xl">
+            <BsInstagram />
+          </div>
+        </span>
+      </Link>
+    </div>
+  );
+};
