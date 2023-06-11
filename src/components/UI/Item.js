@@ -11,7 +11,7 @@ const Item = ({ image, name, priceAfterDiscount, priceBeforeDiscount }) => {
         </div>
 
         <span>
-          <h2 className="text-center">{name}</h2>
+          <h2 className="text-center uppercase">{name}</h2>
           <div className="flex justify-center gap-3">
             <p className="text-red-500">Rp {priceAfterDiscount}</p>
             <s className="text-gray-700">Rp {priceBeforeDiscount}</s>
