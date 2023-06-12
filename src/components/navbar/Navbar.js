@@ -43,20 +43,20 @@ const Navbar = () => {
               isScrolling ? "text-blackgrey" : "text-white"
             } `}
           >
-            <li className="hover:text-yellow-400 transition-all">
+            <li className="transition-all hover:text-yellow-400">
               <Link href={"/collections/footwear"}>Footwear</Link>
             </li>
-            <li className="hover:text-yellow-400 transition-all">
+            <li className="transition-all hover:text-yellow-400">
               <Link href={"/collections/non-footwear"}>Non Footwear</Link>
             </li>
-            <li className="hover:text-yellow-400 transition-all">
+            <li className="transition-all hover:text-yellow-400">
               <Link href={"/collections/repair-product"}>Repair Product</Link>
             </li>
-            <li className="hover:text-yellow-400 transition-all">
+            <li className="transition-all hover:text-yellow-400">
               <Link href={"/blogs/jurnal"}>Journal</Link>
             </li>
-            <li className="hover:text-yellow-400 transition-all">
-              <Link href={"/collections/footwear"}>Sale</Link>
+            <li className="transition-all hover:text-yellow-400">
+              <Link href={"/collections/nah-war"}>Sale</Link>
             </li>
           </ul>
         </span>

@@ -4,7 +4,7 @@ import React from "react";
 
 const Item = ({ image, name, priceAfterDiscount, priceBeforeDiscount }) => {
   return (
-    <div className="w-64 relative">
+    <div className="relative w-64">
       <Link href={""}>
         <div className="w-full h-64 mb-4">
           <Image src={image} width="100%" height="100%" objectFit="cover" />
@@ -14,11 +14,15 @@ const Item = ({ image, name, priceAfterDiscount, priceBeforeDiscount }) => {
           <h2 className="text-center uppercase">{name}</h2>
           <div className="flex justify-center gap-3">
             <p className="text-red-500">Rp {priceAfterDiscount}</p>
-            <s className="text-gray-700">Rp {priceBeforeDiscount}</s>
+            <s className="text-gray-700">
+              {priceBeforeDiscount ? "Rp " + priceBeforeDiscount : ""}
+            </s>
           </div>
         </span>
 
-        <div className="absolute top-2 left-2 text-sm text-gray-500 p-1 bg-white z-10">SALE</div>
+        <div className="absolute z-10 p-1 text-sm text-gray-500 bg-white top-2 left-2">
+          SALE
+        </div>
       </Link>
     </div>
   );

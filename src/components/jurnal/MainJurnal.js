@@ -25,8 +25,8 @@ const HeadMainJurnal = ({ image }) => {
         className="w-full h-[420px] object-cover object-center hover:scale-150 transition-all duration-[5s]"
       />
 
-      <span className="flex flex-col gap-5 absolute left-10 bottom-10 items-start">
-        <h2 className="text-white text-2xl">IMPROVEMENT MAKE BETTER</h2>
+      <span className="absolute flex flex-col items-start gap-5 left-10 bottom-10">
+        <h2 className="text-2xl text-white">IMPROVEMENT MAKE BETTER</h2>
         <Button className={"bg-white text-blackgrey"} text={"READ MORE"} />
       </span>
     </div>

@@ -57,7 +57,7 @@ const ListItemJurnal = ({ image, button, title, desc, link }) => {
   return (
     <div className="w-[31%] flex flex-col gap-5">
       <span className="w-full h-48 overflow-hidden">
-        <Link href={link ? link : ''}>
+        <Link href={link ? link : ""}>
           <Image
             src={image}
             width={300}
@@ -67,9 +67,9 @@ const ListItemJurnal = ({ image, button, title, desc, link }) => {
         </Link>
       </span>
 
-      <span className="space-y-4">
-        <Link href={link ? link : ''}>
-          <h2 className="uppercase text-2xl font-semibold">{title}</h2>
+      <span className="space-y-4 text-start">
+        <Link href={link ? link : ""}>
+          <h2 className="text-2xl font-semibold uppercase">{title}</h2>
         </Link>
         <p>{desc}</p>
         <Button
