@@ -12,7 +12,7 @@ const Galery = () => {
       <span className="relative grid place-items-center">
         <Image src={gambar} width="100%" height="100%" objectFit="cover" />
         <Button
-          className={"bg-white text-blackgrey absolute"}
+          className={"bg-white text-blackgrey absolute top-[45%] left-[42%]"}
           text={"View All Product"}
         />
       </span>
