@@ -60,7 +60,7 @@ const ListItemJurnal = ({ image, button, title, desc, link }) => {
         <Link href={link ? link : ""}>
           <Image
             src={image}
-            width={300}
+            width={500}
             height={300}
             className="w-full h-48 object-cover object-center hover:scale-125 transition-all duration-[5s]"
           />
@@ -74,7 +74,7 @@ const ListItemJurnal = ({ image, button, title, desc, link }) => {
         <p>{desc}</p>
         <Button
           text={button}
-          className={"text-blackgrey border-b-2 px-0"}
+          className={"text-white bg-blackgrey"}
           link={link}
         />
       </span>
