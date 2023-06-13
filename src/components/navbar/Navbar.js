@@ -67,11 +67,11 @@ const Navbar = () => {
           }`}
         >
           <span className="cursor-pointer">
-            <BiUser />
-          </span>
-          <span className="cursor-pointer">
             <AiOutlineShoppingCart />
           </span>
+          <Link href={"/account/login"}>
+            <BiUser />
+          </Link>
         </span>
       </div>
     </nav>
