@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Galery = () => {
   return (
-    <div className="w-full space-y-8 my-10">
+    <div className="w-full my-10 space-y-8">
       <span className="relative grid place-items-center">
         <Image src={gambar} width="100%" height="100%" objectFit="cover" />
         <Button
@@ -17,7 +17,8 @@ const Galery = () => {
         />
       </span>
 
-      <span className="relative w-full flex justify-center flex-wrap">
+      <span className="relative flex flex-wrap justify-center w-full">
+        <IgPost image={gambar1} />
         <IgPost image={gambar1} />
         <IgPost image={gambar1} />
         <IgPost image={gambar1} />

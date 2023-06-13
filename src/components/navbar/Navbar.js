@@ -3,12 +3,13 @@ import React, { useState, useEffect } from "react";
 import nahLogo from "../../assets/logo_nah.webp";
 import nahLogoBlack from "../../assets/logo_nah_black.webp";
 import { BiUser } from "react-icons/bi";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiOutlineClose } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
   const [isScrolling, setIsScrolling] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
 
   const handleScroll = () => {
     setIsScrolling(window.scrollY > 0);
@@ -21,6 +22,10 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const cartHandler = () => {
+    setCartOpen(!cartOpen);
+  };
 
   return (
     <nav
@@ -66,7 +71,7 @@ const Navbar = () => {
             isScrolling ? "text-blackgrey" : "text-white"
           }`}
         >
-          <span className="cursor-pointer">
+          <span className="cursor-pointer" onClick={cartHandler}>
             <AiOutlineShoppingCart />
           </span>
           <Link href={"/account/login"}>
@@ -74,8 +79,26 @@ const Navbar = () => {
           </Link>
         </span>
       </div>
+      {cartOpen && <Cart onClick={cartHandler}/>}
     </nav>
   );
 };
 
 export default Navbar;
+
+const Cart = ({ onClick }) => {
+  return (
+    <div className="w-[28%] h-screen bg-white absolute top-0 right-0 flex flex-col items-center">
+      <div className="flex items-center justify-between w-full h-24 px-5 border-b">
+        <h1 className="text-lg">SHOPPING CART</h1>
+        <span className="text-lg cursor-pointer" onClick={onClick}>
+          <AiOutlineClose />
+        </span>
+      </div>
+
+      <div className="w-[90%] h-[90%] px-5 pt-5 flex flex-col overflow-auto items-center">
+        <h1>YOUR CART IS EMPTY</h1>
+      </div>
+    </div>
+  );
+};
