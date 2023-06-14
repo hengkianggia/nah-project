@@ -28,17 +28,46 @@ const Navbar = () => {
     setCartOpen(!cartOpen);
   };
 
+  const [footwearChild, setFootwearChild] = useState(false);
+
+  const showFootwearTogle = () => {
+    setFootwearChild(true);
+  };
+  const closeFootwearTogle = () => {
+    setFootwearChild(false);
+  };
+
+  const [nonFootwearChild, setNonFootwearChild] = useState(false);
+
+  const showNonFootwearTogle = () => {
+    setNonFootwearChild(true);
+  };
+  const closeNonFootwearTogle = () => {
+    setNonFootwearChild(false);
+  };
+
+  const [hoverNav, setHoverNav] = useState(false);
+  const showHoverNav = () => {
+    setHoverNav(true);
+  };
+  const closeHoverNav = () => {
+    setHoverNav(close);
+  };
+
   return (
     <>
       <nav
-        className={`w-full z-[99] px-16 grid place-items-center transition-all duration-200 h-24 fixed inset-0 ${
-          isScrolling ? "bg-white" : `bg-transparent`
+        className={`w-full z-[99] px-16 grid place-items-center transition-all duration-200 h-24 fixed inset-0 
+        ${
+          isScrolling || hoverNav ? "bg-white" : "bg-transparent"
         }  gap-3 border-b border-white`}
+        onMouseEnter={showHoverNav}
+        onMouseLeave={closeHoverNav}
       >
         <div className="flex items-center justify-between w-full">
           <Link href={"/"}>
             <Image
-              src={isScrolling ? nahLogoBlack : nahLogo}
+              src={isScrolling || hoverNav ? nahLogoBlack : nahLogo}
               alt=""
               className="object-cover object-center w-12 h-12"
             />
@@ -47,14 +76,45 @@ const Navbar = () => {
           <span>
             <ul
               className={`flex justify-center w-full gap-8 text-lg font-semibold ${
-                isScrolling ? "text-blackgrey" : "text-white"
+                isScrolling || hoverNav ? "text-blackgrey" : "text-white"
               } `}
             >
-              <li className="transition-all hover:text-yellow-400">
+              <li
+                className="transition-all group hover:text-yellow-400 relative flex flex-col"
+                onMouseEnter={showFootwearTogle}
+                onMouseLeave={closeFootwearTogle}
+              >
                 <Link href={"/collections/footwear"}>Footwear</Link>
+                {footwearChild && (
+                  <ul className="absolute -bottom-[110px] p-3 h-28 flex flex-col justify-end w-44 bg-white group-hover:font-normal text-blackgrey">
+                    <li>
+                      <Link href={""}>Sneakers</Link>
+                    </li>
+                    <li>
+                      <Link href={""}>All Collections</Link>
+                    </li>
+                  </ul>
+                )}
               </li>
-              <li className="transition-all hover:text-yellow-400">
+              <li
+                className="transition-all group hover:text-yellow-400 relative flex flex-col"
+                onMouseEnter={showNonFootwearTogle}
+                onMouseLeave={closeNonFootwearTogle}
+              >
                 <Link href={"/collections/non-footwear"}>Non Footwear</Link>
+                {nonFootwearChild && (
+                  <ul className="absolute -bottom-[140px] p-3 h-36 flex flex-col justify-end w-44 bg-white group-hover:font-normal text-blackgrey">
+                    <li>
+                      <Link href={""}>Apparels</Link>
+                    </li>
+                    <li>
+                      <Link href={""}>Accessories</Link>
+                    </li>
+                    <li>
+                      <Link href={""}>All Collections</Link>
+                    </li>
+                  </ul>
+                )}
               </li>
               <li className="transition-all hover:text-yellow-400">
                 <Link href={"/collections/repair-product"}>Repair Product</Link>
@@ -70,7 +130,7 @@ const Navbar = () => {
 
           <span
             className={`flex gap-3 text-xl ${
-              isScrolling ? "text-blackgrey" : "text-white"
+              isScrolling || hoverNav ? "text-blackgrey" : "text-white"
             }`}
           >
             <span className="cursor-pointer" onClick={cartHandler}>
@@ -81,6 +141,7 @@ const Navbar = () => {
             </Link>
           </span>
         </div>
+
         {cartOpen && <Cart onClick={cartHandler} />}
       </nav>
 
