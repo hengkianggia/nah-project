@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import gambar from "../../../public/assets/head_jurnal.webp";
+import gambar from "../../public/assets/head_jurnal.webp";
 import Button from "../UI/Button";
 import JurnalList from "./JurnalList";
 

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import gambar from "../../../public/assets/pulsecheck.webp";
-import gambar1 from "../../../public/assets/product1.webp";
+import gambar from "../../public/assets/pulsecheck.webp";
+import gambar1 from "../../public/assets/product1.webp";
 import Button from "../UI/Button";
 import { BsInstagram } from "react-icons/bs";
 import Link from "next/link";

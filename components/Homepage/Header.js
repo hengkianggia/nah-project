@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import header from "../../../public/assets/nah_header.webp";
+import header from "../../public/assets/nah_header.webp";
 
 const Header = () => {
   return (

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import nahLogo from "../../../public/assets/logo_nah.webp";
-import nahLogoBlack from "../../../public/assets/logo_nah_black.webp";
+import nahLogo from "../../public/assets/logo_nah.webp";
+import nahLogoBlack from "../../public/assets/logo_nah_black.webp";
 import { BiUser } from "react-icons/bi";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { IoMdCall } from "react-icons/io";

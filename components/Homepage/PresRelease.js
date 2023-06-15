@@ -1,5 +1,5 @@
 import React from "react";
-import gambar from "../../../public/assets/jurnal_nah.webp";
+import gambar from "../../public/assets/jurnal_nah.webp";
 import Image from "next/image";
 import Link from "next/link";
 

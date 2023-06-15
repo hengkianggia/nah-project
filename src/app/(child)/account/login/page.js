@@ -1,6 +1,6 @@
-import HeaderEveryPage from "@/components/UI/HeaderEveryPage";
-import MainLogin from "@/components/login/MainLogin";
 import React from "react";
+import HeaderEveryPage from "../../../../../components/UI/HeaderEveryPage";
+import MainLogin from "../../../../../components/login/MainLogin";
 
 const page = () => {
   return (

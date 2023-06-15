@@ -1,6 +1,6 @@
-import HeaderEveryPage from "@/components/UI/HeaderEveryPage";
-import MainCollection from "@/components/collections/MainCollection";
 import React from "react";
+import HeaderEveryPage from "../../../../../components/UI/HeaderEveryPage";
+import MainCollection from "../../../../components/collections/MainCollection";
 
 const page = () => {
   return (

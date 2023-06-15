@@ -1,6 +1,6 @@
-import HeaderEveryPage from "@/components/UI/HeaderEveryPage";
-import MainJurnal from "@/components/jurnal/MainJurnal";
 import React from "react";
+import HeaderEveryPage from "../../../../../components/UI/HeaderEveryPage";
+import MainJurnal from "../../../../../components/jurnal/MainJurnal";
 
 const page = () => {
   return (
