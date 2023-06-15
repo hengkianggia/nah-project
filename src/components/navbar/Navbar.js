@@ -1,9 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import nahLogo from "../../assets/logo_nah.webp";
-import nahLogoBlack from "../../assets/logo_nah_black.webp";
+import nahLogo from "../../../public/assets/logo_nah.webp";
+import nahLogoBlack from "../../../public/assets/logo_nah_black.webp";
 import { BiUser } from "react-icons/bi";
 import { RiCustomerService2Fill } from "react-icons/ri";
+import { IoMdCall } from "react-icons/io";
+import { BsWhatsapp } from "react-icons/bs";
 import { AiOutlineShoppingCart, AiOutlineClose } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +13,10 @@ import Link from "next/link";
 const Navbar = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [nonFootwearChild, setNonFootwearChild] = useState(false);
+  const [footwearChild, setFootwearChild] = useState(false);
+  const [hoverNav, setHoverNav] = useState(false);
+  const [custService, setCustService] = useState(false);
 
   const handleScroll = () => {
     setIsScrolling(window.scrollY > 0);
@@ -24,12 +30,17 @@ const Navbar = () => {
     };
   }, []);
 
+  // cart
   const cartHandler = () => {
     setCartOpen(!cartOpen);
   };
 
-  const [footwearChild, setFootwearChild] = useState(false);
+  // cust service
+  const custServiceHandler = () => {
+    setCustService(!custService);
+  };
 
+  // footwear
   const showFootwearTogle = () => {
     setFootwearChild(true);
   };
@@ -37,8 +48,7 @@ const Navbar = () => {
     setFootwearChild(false);
   };
 
-  const [nonFootwearChild, setNonFootwearChild] = useState(false);
-
+  // non footwear
   const showNonFootwearTogle = () => {
     setNonFootwearChild(true);
   };
@@ -46,7 +56,7 @@ const Navbar = () => {
     setNonFootwearChild(false);
   };
 
-  const [hoverNav, setHoverNav] = useState(false);
+  // nav
   const showHoverNav = () => {
     setHoverNav(true);
   };
@@ -145,7 +155,10 @@ const Navbar = () => {
         {cartOpen && <Cart onClick={cartHandler} />}
       </nav>
 
-      <CustomerService />
+      <CustomerService
+        onClick={custServiceHandler}
+        custServiceStatus={custService}
+      />
     </>
   );
 };
@@ -169,19 +182,42 @@ const Cart = ({ onClick }) => {
   );
 };
 
-const CustomerService = () => {
+const CustomerService = ({ onClick, custServiceStatus }) => {
   return (
-    <div className="fixed z-10 bottom-5 left-5">
+    <div className="fixed z-10 bottom-5 left-5 flex flex-col items-start gap-5">
+      {custServiceStatus && (
+        <div className="relative flex flex-col items-center gap-4 text-3xl">
+          <div className="bg-white shadow-md p-2 rounded-md">
+            <span className="cursor-pointer">
+              <IoMdCall />
+            </span>
+          </div>
+          <div className="bg-white shadow-md p-2 rounded-md">
+            <span className="cursor-pointer">
+              <BsWhatsapp />
+            </span>
+          </div>
+        </div>
+      )}
+
       <div className="flex items-center gap-3">
-        <div className="bg-white shadow-md p-2 rounded-md">
-          <span className="text-3xl">
-            <RiCustomerService2Fill />
-          </span>
+        <div className="bg-white shadow-md p-2 rounded-md" onClick={onClick}>
+          {custServiceStatus ? (
+            <span className="text-3xl cursor-pointer">
+              <AiOutlineClose />
+            </span>
+          ) : (
+            <span className="text-3xl cursor-pointer">
+              <RiCustomerService2Fill />
+            </span>
+          )}
         </div>
 
-        <div className="p-2 py-1 rounded-md bg-white z-10 shadow-md">
-          <p>Perlu bantuan?</p>
-        </div>
+        {!custServiceStatus && (
+          <div className="p-2 py-1 rounded-md bg-white z-10 shadow-md">
+            <p>Perlu bantuan?</p>
+          </div>
+        )}
       </div>
     </div>
   );

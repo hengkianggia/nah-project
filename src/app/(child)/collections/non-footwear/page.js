@@ -1,7 +1,7 @@
 import HeaderEveryPage from "@/components/UI/HeaderEveryPage";
 import Item from "@/components/UI/Item";
 import React from "react";
-import gambar from "../../../../assets/clotes.webp";
+import gambar from "../../../../../public/assets/clotes.webp";
 
 const page = () => {
   return (

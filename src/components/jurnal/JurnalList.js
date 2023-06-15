@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Button from "../UI/Button";
-import gambar from "../../assets/jurnal_list.webp";
+import gambar from "../../../public/assets/jurnal_list.webp";
 import Link from "next/link";
 
 const JurnalList = () => {

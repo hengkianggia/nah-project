@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Button from "../UI/Button";
-import gambar from "../../assets/Collection.webp";
+import gambar from "../../../public/assets/Collection.webp";
 
 const MainCollection = () => {
   return (

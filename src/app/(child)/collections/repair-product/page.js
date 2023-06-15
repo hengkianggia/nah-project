@@ -1,7 +1,7 @@
 import HeaderEveryPage from "@/components/UI/HeaderEveryPage";
 import Item from "@/components/UI/Item";
 import React from "react";
-import gambar from "../../../../assets/product1.webp";
+import gambar from "../../../../../public/assets/product1.webp";
 
 const page = () => {
   return (

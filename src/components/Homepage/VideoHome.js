@@ -5,7 +5,7 @@ const VideoHome = ({ link }) => {
     <div>
       <iframe
         src={link}
-        frameborder="0"
+        frameBorder="0"
         className="w-full h-[80vh]"
         width="100%"
         height="80vh"

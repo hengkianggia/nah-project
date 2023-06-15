@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Item from "../UI/Item";
-import gambar from "../../assets/product1.webp";
+import gambar from "../../../public/assets/product1.webp";
 import Link from "next/link";
 import { AiFillRightCircle, AiFillLeftCircle } from "react-icons/ai";
 import Button from "../UI/Button";
