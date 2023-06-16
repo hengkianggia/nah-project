@@ -2,10 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Item = ({ image, name, priceAfterDiscount, priceBeforeDiscount }) => {
+const Item = ({
+  image,
+  name,
+  priceAfterDiscount,
+  priceBeforeDiscount,
+  link,
+}) => {
   return (
     <div className="relative w-64">
-      <Link href={""}>
+      <Link href={link ? link : ''}>
         <div className="w-full h-64 mb-4">
           <Image src={image} width="100%" height="100%" objectFit="cover" />
         </div>

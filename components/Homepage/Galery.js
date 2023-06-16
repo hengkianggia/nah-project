@@ -6,6 +6,21 @@ import Button from "../UI/Button";
 import { BsInstagram } from "react-icons/bs";
 import Link from "next/link";
 
+const data = [
+  { image: gambar1 },
+  { image: gambar1 },
+  { image: gambar1 },
+  { image: gambar1 },
+  { image: gambar1 },
+  { image: gambar1 },
+  { image: gambar1 },
+  { image: gambar1 },
+  { image: gambar1 },
+  { image: gambar1 },
+  { image: gambar1 },
+  { image: gambar1 },
+];
+
 const Galery = () => {
   return (
     <div className="w-full my-10 space-y-8">
@@ -18,18 +33,9 @@ const Galery = () => {
       </span>
 
       <span className="relative flex flex-wrap justify-center w-full">
-        <IgPost image={gambar1} />
-        <IgPost image={gambar1} />
-        <IgPost image={gambar1} />
-        <IgPost image={gambar1} />
-        <IgPost image={gambar1} />
-        <IgPost image={gambar1} />
-        <IgPost image={gambar1} />
-        <IgPost image={gambar1} />
-        <IgPost image={gambar1} />
-        <IgPost image={gambar1} />
-        <IgPost image={gambar1} />
-        <IgPost image={gambar1} />
+        {data.map((item, index) => {
+          return <IgPost key={index} image={item.image} />;
+        })}
       </span>
     </div>
   );
@@ -40,7 +46,7 @@ export default Galery;
 const IgPost = ({ image, link }) => {
   return (
     <div className="w-[25%] relative">
-      <Link href={link ? link : ''}>
+      <Link href={link ? link : ""}>
         <Image src={image} width="100%" height={"100%"} objectFit="cover" />
         <span className="w-full h-full absolute inset-0 opacity-0 hover:opacity-[.4] transition-all z-50 bg-gradient-radial from-transparent to-gray-600 grid place-items-center">
           <div className="text-2xl">

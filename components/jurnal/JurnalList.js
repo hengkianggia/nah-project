@@ -4,49 +4,45 @@ import Button from "../UI/Button";
 import gambar from "../../public/assets/jurnal_list.webp";
 import Link from "next/link";
 
+const data = [
+  {
+    title: "FLICKER SANDAL NAVY",
+    desc: "COMMUNITY - Fauzan Fadhilla Dzulfiqar Hello kawan!! Udah lama gak sharing sharing nihh...",
+    button: "Read More",
+    image: gambar,
+  },
+  {
+    title: "FLICKER SANDAL NAVY",
+    desc: "COMMUNITY - Fauzan Fadhilla Dzulfiqar Hello kawan!! Udah lama gak sharing sharing nihh...",
+    button: "Read More",
+    image: gambar,
+  },
+  {
+    title: "FLICKER SANDAL NAVY",
+    desc: "COMMUNITY - Fauzan Fadhilla Dzulfiqar Hello kawan!! Udah lama gak sharing sharing nihh...",
+    button: "Read More",
+    image: gambar,
+  },
+  {
+    title: "FLICKER SANDAL NAVY",
+    desc: "COMMUNITY - Fauzan Fadhilla Dzulfiqar Hello kawan!! Udah lama gak sharing sharing nihh...",
+    button: "Read More",
+    image: gambar,
+  },
+  {
+    title: "FLICKER SANDAL NAVY",
+    desc: "COMMUNITY - Fauzan Fadhilla Dzulfiqar Hello kawan!! Udah lama gak sharing sharing nihh...",
+    button: "Read More",
+    image: gambar,
+  },
+];
+
 const JurnalList = () => {
   return (
     <div className="w-full flex flex-wrap gap-[42px]">
-      <ListItemJurnal
-        image={gambar}
-        button={"Read More"}
-        title={"gairah skateboarder kota malang"}
-        desc={
-          "COMMUNITY - Fauzan Fadhilla Dzulfiqar Hello kawan!! Udah lama gak sharing sharing nihh..."
-        }
-      />
-      <ListItemJurnal
-        image={gambar}
-        button={"Read More"}
-        title={"gairah skateboarder kota malang"}
-        desc={
-          "COMMUNITY - Fauzan Fadhilla Dzulfiqar Hello kawan!! Udah lama gak sharing sharing nihh..."
-        }
-      />
-      <ListItemJurnal
-        image={gambar}
-        button={"Read More"}
-        title={"gairah skateboarder kota malang"}
-        desc={
-          "COMMUNITY - Fauzan Fadhilla Dzulfiqar Hello kawan!! Udah lama gak sharing sharing nihh..."
-        }
-      />
-      <ListItemJurnal
-        image={gambar}
-        button={"Read More"}
-        title={"gairah skateboarder kota malang"}
-        desc={
-          "COMMUNITY - Fauzan Fadhilla Dzulfiqar Hello kawan!! Udah lama gak sharing sharing nihh..."
-        }
-      />
-      <ListItemJurnal
-        image={gambar}
-        button={"Read More"}
-        title={"gairah skateboarder kota malang"}
-        desc={
-          "COMMUNITY - Fauzan Fadhilla Dzulfiqar Hello kawan!! Udah lama gak sharing sharing nihh..."
-        }
-      />
+      {data.map((item, index) => {
+        return <ListItemJurnal key={index} image={item.image} title={item.title} desc={item.desc} button={item.button} link={`/blogs/jurnal/${item.title}`}/>;
+      })}
     </div>
   );
 };
